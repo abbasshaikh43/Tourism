@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BAKLIWAL TOURISM</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="css/Styles.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins';
+        }
+        body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: linear-gradient(rgba(12, 118, 54, 0.6), rgba(0, 0, 0, 0.6)), url(pic.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Arial', sans-serif; 
+        }
+main {
+    flex-grow: 1;
+}
+
+        .tourism {
+            width: 100%;
+            height: 300vh;
+            background-size: cover;
+            background-position: center;
+        }
+
+        header {
+            padding: 30px 3%;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        header ul {
+            flex: 1;
+            text-align: right;
+            list-style: none;
+        }
+
+        header ul li {
+            display: inline-block;
+            margin: 0 35px;
+        }
+
+        header ul li a {
+            text-decoration: none;
+            color: #f8f5f5;
+            font-size: 16px;
+            font-weight: 300;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-left: 65%;
+            border-bottom: 1px solid #070707;
+            padding-bottom: 3px;
+            margin-top: -5rem;
+        }
+
+        .search-bar i {
+            font-size: 15px;
+            color: #fffdfd;
+        }
+
+        .search-bar input {
+            background: none;
+            border: none;
+            outline: none;
+            font-size: 15px;
+            color: #fefdfd;
+        }
+
+        .search-bar input::placeholder {
+            color: #fefdfd;
+        }
+
+        .content1 {
+            margin-left: 5%;
+            display: flex;
+            align-items: center;
+            color: #fefbfb;
+        }
+
+        .links {
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            
+        }
+
+        .links ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .links ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .links ul li a {
+            text-decoration: none;
+            color: #fafafa;
+            font-size: 16px;
+            font-weight: 300;
+        }
+
+        .home {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: -120rem;
+        }
+
+        .home .content {
+            width: 45%;
+            margin-left: 5%;
+        }
+
+        .home .slider {
+            width: 50%;
+        }
+
+        .slider {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            margin-right: 5rem;
+            margin-top: -10rem;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slides img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .btn {
+  margin-top: 1rem;
+  display: inline-block;
+  border: 0.2rem solid black;
+  color: black;
+  cursor: pointer;
+  background: none;
+  font-size: 1.7rem;
+  padding: 1rem 3rem;
+  border-radius: 40px;
+}
+.btn:hover {
+  background: black;
+  color: white;
+}
+        .home .content span {
+            font-size: 4rem;
+            color: black;
+            margin-bottom: 15rem;
+        }
+
+        .home .content h3 {
+            font-size: 6rem;
+            color: rgb(244, 144, 5);
+            padding-top: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .home .content p {
+            line-height: 2;
+            color: black;
+            font-size: 1.5rem;
+            padding: 1rem 0;
+        }
+
+        .category .box-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
+            gap: 1.5rem;
+           margin-top: 4rem;
+        }
+
+        .category .box {
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .category .box img {
+            height: 20rem;
+            width: 20rem;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            box-shadow: 1px 2px 6px 3px grey;
+            transition: transform 0.6s;
+        }
+
+        .category .box h3 {
+            font-size: 2rem;
+            background: linear-gradient(to right, #060606, #a12307, #100a2e, #1f810b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .category .box p {
+            font-size: 1.5rem;
+            color: #10221b;
+            padding: 1rem 0;
+            line-height: 2;
+        }
+
+        .category .box:hover img {
+            transform: translateY(150px);
+        }
+
+        .packages {
+            background: #eee;
+            background-image: linear-gradient(rgba(12, 118, 54, 0.6), rgba(0, 0, 0, 0.6)), url(pic.jpg);
+        }
+
+        .packages .box-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+            gap: 1.5rem;
+            margin-top: 5rem;
+        }
+
+        .packages .box-container .box {
+            text-align: center;
+            background: #fff;
+            border: 0.2rem solid #040404;
+            box-shadow: 0 0.5rem 1rem rgba(7, 7, 7, 0.1);
+            border-radius: 2.5rem;
+        }
+
+        .packages .box-container .box:hover {
+            background: #543c03;
+        }
+
+        .packages .box-container .box:hover .content > * {
+            color: #fff;
+        }
+
+        .packages .box-container .box:hover .btn {
+            border-color: #fff;
+        }
+
+        .packages .box-container .box:hover .btn:hover {
+            background: #fff;
+            color: #a6770a;
+        }
+
+        .packages .box-container .box .image {
+            height: 22rem;
+            overflow: hidden;
+            padding: 2rem;
+            padding-bottom: 0;
+            border-radius: 0.5rem;
+        }
+
+        .packages .box-container .box .image img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 0.5rem;
+        }
+
+        .packages .box-container .box .content {
+            padding: 2rem;
+        }
+
+        .packages .box-container .box .content h3 {
+            font-size: 2rem;
+            color: #10221b;
+        }
+
+        .packages .box-container .box .content p {
+            font-size: 1.5rem;
+            color: #10221b;
+            padding: 1rem 0;
+            line-height: 2;
+        }
+
+        .packages .box-container .box .content .price {
+            font-size: 2rem;
+            color: #030303;
+        }.booking {
+            background-image: linear-gradient(rgba(12, 118, 54, 0.6), rgba(0, 0, 0, 0.6)), url(pic.jpg);
+    padding: 50px 0;
+}
+
+.booking-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 50px;
+}
+
+.booking-form-container {
+    width: 45%;
+    padding: 20px;
+    background: #f7f6f3;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.booking-info {
+    width: 45%;
+    text-align: center;
+}
+
+.booking-info .heading {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.booking-info p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: #f6f3f3;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-group input[type="date"] {
+    padding: 8px;
+}
+
+.form-group button {
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #060606;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+  
+}
+
+.form-group button:hover {
+    background: #444;
+}
+.socialmedia {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  margin-left: 12rem;
+  margin-top: -2rem;
+}
+
+.socialmedia a {
+  color: #fffcfc;
+  font-size: 20px;
+}
+.contact {
+  background-color: rgb(59, 57, 55);
+  padding: 40px 0;
+  text-align: center;
+  color: #fcfbfb;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+.info-item {
+  margin: 0 20px;
+  text-align: center;
+}
+
+.info-item i {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  display: inline-block;
+  background-color: #ff0000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #e60000;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.footer {
+  background-color: #070e16;
+  padding: 10px 0;
+  color: #fff;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.footer-text {
+  font-size:14px;
+}
+.footer-links a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="tourism">
+        <header>
+            <div class="content1">
+                <strong><h1>BAKLIWAL TOURISM</h1></strong>
+            </div>
+            <div class="search-bar">
+                <i class="bi bi-search"></i>
+                <input type="text" placeholder="Search">
+            </div>
+            <div class="links">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#packages">PACKAGE</a></li>
+                    <li><a href="#booking">BOOKING</a></li>
+                    <li><a href="file:///C:/Users/abbas%20shaikh/Desktop/small/aboutus.html#">ABOUT US</a></li>
+                </ul>
+            </div>
+        </header>
+    </div>
+
+    <section class="home" id="home">
+        <div class="content">
+            <span>Wanna Explore</span>
+            <h3>Join US</h3>
+            <a href="#category" class="btn">Get Started</a>
+        </div>
+        <div class="slider">
+            <div class="slides">
+                <img src="idea3.jpg" alt="Slide 1">
+                <img src="idea2.jpg" alt="Slide 2">
+                <img src="idea1.jpg" alt="Slide 3">
+                <img src="idea4.jpg" alt="Slide 4">
+                <img src="idea5.jpg" alt="Slide 5">
+            </div>
+        </div>
+    </section>
+
+    <section class="category" id="category">
+        <div style="text-align: center;">
+        <div style="margin-top: 10rem;">
+            <div style="font-size: 5rem;">
+      <strong>  <h1 class="heading">Some Popular Ideas!</h1></strong>
+    </div></div></div>
+        <div class="box-container">
+            <div class="box">
+                <img src="bunjee.webp" alt="BungeeJumpingImg">
+                <h3>Bungee Jump</h3>
+                <p>Bungee jumping is an activity that involves a person jumping from a great height while connected to a large elastic cord.</p>
+                <a href="https://en.wikipedia.org/wiki/Bungee_jumping" class="btn">Read More</a>
+            </div>
+            <div class="box">
+                <img src="rafting-removebg-preview.png" alt="BoatRaftingImg">
+                <h3>Boat Rafting</h3>
+                <p>Boat rafting is an exciting water sport that involves navigating a river or other bodies of water using an inflatable raft.</p>
+                <a href="https://en.wikipedia.org/wiki/Rafting" class="btn">Read More</a>
+            </div>
+            <div class="box">
+                <img src="sky1-removebg-preview.png" alt="SkyDivingImg">
+                <h3>Sky Diving</h3>
+                <p>Sky diving involves jumping from an aircraft and performing acrobatic maneuvers in freefall before deploying a parachute.</p>
+                <a href="https://en.wikipedia.org/wiki/Parachuting" class="btn">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="packages" id="packages">
+        <div style="text-align: center;">
+            <div style="margin-top: 10rem;">
+                <div style="font-size: 5rem;">
+        <h1 class="heading">Popular Packages</h1>
+                </div></div></div>
+        <div class="box-container">
+            <div class="box">
+                <div class="image">
+                    <img src="kashmir.webp" alt="">
+                </div>
+                <div class="content">
+                    <h3>Kashmir Package</h3>
+                    <p>Kashmir has many tourist attractions, including lakes, gardens, valleys, and mountains</p>
+                    <div class="price">Rs 12,999 - Rs 18,999</div>
+                    <a href="#contact" class="btn">Explore now</a>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="manali.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Manali Package</h3>
+                    <p>Kullu Manali Shimla has always been a very popular destination for the old, young travelers as well as newly married couples.</p>
+                    <div class="price">Rs 5,999 - Rs 8,999</div>
+                    <a href="#contact" class="btn">Explore Now</a>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="goa.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Goa Package</h3>
+                    <p>The most popular beach of Goa, Baga is located close to Calangute beach, around 30 Km North of Panaji.</p>
+                    <div class="price">Rs 6,999 - Rs 8,999</div>
+                    <a href="#contact" class="btn">Explore Now</a>
+                </div>
+            </div>
+           
+    
+            <div class="box">
+                <div class="image">
+                    <img src="amritsir.webp" alt="">
+                </div>
+                <div class="content">
+                    <h3>Amritsar Package</h3>
+
+                    <p> mix of spiritual, historical, and cultural experiences, making Amritsar a unique destination. </p>
+                    <div class="price">Rs 13,999 - Rs16,999</div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <a href="#contact" class="btn">Explore now</a>
+                </div>
+            </div>
+    
+            <div class="box">
+                <div class="image">
+                    <img src="ladakh.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Ladakh Package</h3>
+                    <p> A unique blend of natural beauty, adventure, and cultural richness, making it a must-visit destination for nature lovers and adventure seekers.</p>
+                    <div class="price">Rs 4,999 - Rs 9,999</div>
+                    <br>
+                    <br>
+                    <a href="#contact" class="btn">Explore now</a>
+                </div>
+            </div>
+    
+            <div class="box">
+                <div class="image">
+                    <img src="darjee.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>Darjeeling Package</h3>
+                    <p> Darjeeling is an incredibly lively place and is popularly known for its topmost things to do like Padmaja Naidu Himalayan Zoological Park, Batasia Loop, and Japanese Peace Pagoda.</p>
+                    <div class="price">Rs 18,000 - Rs 20,000</div>
+                    <a href="#contact" class="btn">Explore now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="booking" id="booking">
+        <div class="booking-container">
+            <div class="booking-form-container">
+                <form id="booking-form">
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="package">Select Package:</label>
+                        <select id="package" name="package" required>
+                            <option value="" disabled selected>Select a package</option>
+                            <option value="Kashmir">Kashmir Package</option>
+                            <option value="Manali">Manali Package</option>
+                            <option value="Goa">Goa Package</option>
+                            <option value="Amritsar">Amritsar Package</option>
+                            <option value="Ladakh">Ladakh Package</option>
+                            <option value="Darjeeling">Darjeeling Package</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Preferred Date:</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <button type="submit" class="btn">Book Now</button>
+                </form>
+            </div>
+            <div class="booking-info">
+                <h1 class="heading">Book Your Trip</h1>
+                <p>Plan your dream vacation with us. Choose from our popular packages . Fill in your details and let us handle the rest!</p>
+            </div>
+        </div>
+    </section>    
+    <section class="contact">
+        <div class="contact-container">
+          <h2>Contact Us</h2>
+          <br>
+          <div class="socialmedia">
+            <a href="https://www.instagram.com/abbasshaikh_16/#" class="bi bi-instagram"></a>
+            <a href="https://in.linkedin.com/in/abbas-shaikh-33398b324?trk=people-guest_people_search-card#" class="bi bi-linkedin"></a>
+            <a href="#" class="bi bi-facebook"></a>
+            <a href="https://github.com/abbasshaikh43#" class="bi bi-github"></a>
+          </div>
+         <br>
+          <div class="contact-info">
+            <div class="info-item">
+              <p>VASHI , NAVI MUMBAI</p>
+            </div>
+            <div class="info-item">
+              <p>8291369730</p>
+            </div>
+            <div class="info-item">
+              <p>abbasshaikh@rentrobodrone.com</p>
+            </div>
+          </div>
+          <form class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </section>    
+      <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-logo">
+          </div>
+          <nav class="footer-links">
+            <a href="#">HOME</a>
+            <a href="#">PRODUCT</a>
+            <a href="#">ORDER</a>
+            <a href="#">ABOUT US</a>
+          </nav>
+        </div>
+        <p class="footer-text">&copy; 2025 BAKLIWAL TOURISM. All rights reserved.</p>
+      </footer>    
+  
+    <script>
+        
+        let slides = document.querySelector('.slides');
+        let slideIndex = 0;
+        setInterval(() => {
+            slideIndex = (slideIndex + 1) % slides.children.length;
+            slides.style.transform = `translateX(${-slideIndex * 100}%)`;
+        }, 3000)<script>
+    document.getElementById('booking-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const package = document.getElementById('package').value;
+        const date = document.getElementById('date').value;
+
+        alert(`Thank you, ${name}! Your booking for the ${package} package on ${date} has been received. We will contact you shortly at ${email} or ${phone}.`);
+        
+        // Optionally, reset the form
+        document.getElementById('booking-form').reset();
+    });
+</script>
+</body>
+</html>
